@@ -1,0 +1,29 @@
+{
+  "name": "freecodecamp-drums",
+  "version": "1.0.0",
+  "description": "This is one of the FreeCodeCamp front-end libraries certification projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpham0527/freecodecamp-drums.git"
+  },
+  "keywords": [
+    "FreeCodeCamp",
+    "front-end",
+    "React"
+  ],
+  "author": "John Pham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnpham0527/freecodecamp-drums/issues"
+  },
+  "homepage": "https://github.com/johnpham0527/freecodecamp-drums#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
