@@ -1,3 +1,5 @@
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import "./drums.css"
 
 const { Provider, connect } = ReactRedux;
