@@ -1,3 +1,5 @@
+import "./drums.css"
+
 const { Provider, connect } = ReactRedux;
 const { applyMiddleware, createStore, combineReducers, bindActionCreators} = Redux;
 const thunk = ReduxThunk.default;
