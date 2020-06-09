@@ -1,4 +1,5 @@
 import Form from "./js/components/Form";
+import AppWrapper from "./js/components/Drums";
 
 import _ from 'lodash';
 import printMe from './print.js';
