@@ -4,7 +4,7 @@
   "description": "This is one of the FreeCodeCamp front-end libraries certification projects",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack --mode development --display-error-details",
     "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
