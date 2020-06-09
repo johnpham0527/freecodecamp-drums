@@ -1,4 +1,4 @@
-//import Form from "./js/components/Form";
+import Form from "./js/components/Form";
 
 import _ from 'lodash';
 import printMe from './print.js';
