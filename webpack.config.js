@@ -12,12 +12,17 @@ module.exports = {
                 test: /\.js|jsx$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
+            },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src", "index.html")
+            template: path.resolve(__dirname, "src", "index.html"),
+            filename: "./index.html"
         })
     ]
 };
