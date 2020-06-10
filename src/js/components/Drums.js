@@ -35,8 +35,25 @@ class Drums extends Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  handleKeyPress(event) {
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress)
+  }
 
+  componentWillUnmount() {
+    document.removeEventListener('keydown');
+  }
+
+  handleKeyPress(event) {
+    switch (event.keyCode) {
+      case 81:
+        playAudio('Q');
+        break;
+      case 87:
+        playAudio('W');
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
