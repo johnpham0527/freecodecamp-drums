@@ -8,7 +8,8 @@ class Button extends Component {
   }
 
   handleClick() {
-
+    let sound = document.getElementById(this.props.capitalLetter)
+    sound.play()
   }
 
   render() {
