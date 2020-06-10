@@ -57,6 +57,10 @@ class Drums extends Component {
   }
 
   handleKeyPress(event) {
+    let keyCodeString = event.keyCode.toString();
+    playAudio(drums[keyCodeString]);
+
+    /*
     switch (event.keyCode) {
       case 81:
         playAudio('Q');
@@ -67,6 +71,8 @@ class Drums extends Component {
       default:
         break;
     }
+    */
+    
   }
 
   render() {
