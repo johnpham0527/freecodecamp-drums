@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-/*
+
 const playAudio = letter => {
     let sound = document.getElementById(letter)
     sound.play()
 }
-*/
+
 
 class Button extends Component {
   constructor(props) {
@@ -15,8 +15,7 @@ class Button extends Component {
   }
 
   handleClick() {
-    let sound = document.getElementById(this.props.letter)
-    sound.play()
+    playAudio(this.props.letter);
   }
 
   render() {
