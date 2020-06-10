@@ -15,30 +15,18 @@ class Drums extends Component {
     super();
 
     this.state = {
-      value: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
-  }
+  
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <div>
+        <Button capitalLetter='Q' audioSource='http://john-pham.com/freecodecamp/BingBaa.mp3' handleDrumClick={this.handleDrumClick}></Button>
+      </div>
     );
   }
 }
