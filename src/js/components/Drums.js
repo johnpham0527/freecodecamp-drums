@@ -43,6 +43,7 @@ class Drums extends Component {
     return (
       <div>
         <Button letter='Q' audioSource='http://john-pham.com/freecodecamp/BingBaa.mp3'></Button>
+        <Button letter='W' audioSource='http://john-pham.com/freecodecamp/Celebration.mp3'></Button>
       </div>
     );
   }
