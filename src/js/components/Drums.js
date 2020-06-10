@@ -10,7 +10,7 @@ const playAudio = letter => {
 
 class Button extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -29,8 +29,8 @@ class Button extends Component {
 }
 
 class Drums extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
