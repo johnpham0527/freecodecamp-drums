@@ -7,9 +7,8 @@ const playAudio = letter => {
     sound.play()
 }
 
-
 class Button extends Component {
-  constructor(props) {
+  constructor({props}) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -19,10 +18,11 @@ class Button extends Component {
   }
 
   render() {
+    const { letter, audioSource } = this.props; //destructure props
     return (
       <button class='drum-pad' onClick={this.handleClick} type='button'>
-        {this.props.letter}
-        <audio class='clip' id={this.props.letter} src={this.props.audioSource} type='audio/mpeg'></audio>
+        {letter}
+        <audio class='clip' id={letter} src={audioSource} type='audio/mpeg'></audio>
       </button>
     )
   }
