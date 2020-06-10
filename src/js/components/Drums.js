@@ -1,6 +1,27 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+class Button extends Component {
+  constructor(props) { //destructuring props
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+
+  }
+
+  render() {
+    return (
+      <button class='drum-pad'>
+        {this.props.capitalLetter}
+        <audio class='clip' id={this.props.capitalLetter} src={this.props.audioSource} onClick={this.handleClick}></audio>
+      </button>
+    )
+  }
+}
+
+/*
 const Button = ({capitalLetter, audioSource, handleDrumClick}) => { //destructuring props
   return (
     <button class='drum-pad'>
@@ -9,6 +30,7 @@ const Button = ({capitalLetter, audioSource, handleDrumClick}) => { //destructur
     </button>
   )
 }
+*/
 
 class Drums extends Component {
   constructor() {
@@ -21,7 +43,6 @@ class Drums extends Component {
   }
 
   handleDrumClick() {
-
   }
 
   render() {
