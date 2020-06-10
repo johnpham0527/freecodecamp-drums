@@ -30,9 +30,9 @@ class Button extends Component {
   render() {
     const { letter, audioSource } = this.props; //destructure props
     return (
-      <button class='drum-pad' onClick={this.handleClick} type='button'>
+      <button className='drum-pad' onClick={this.handleClick} type='button'>
         {letter}
-        <audio class='clip' id={letter} src={audioSource} type='audio/mpeg'></audio>
+        <audio className='clip' id={letter} src={audioSource} type='audio/mpeg'></audio>
       </button>
     )
   }
@@ -67,10 +67,18 @@ class Drums extends Component {
   }
 
   render() {
+
     return (
       <div>
+        {
+          Object.entries(drums).map((drumKey, index) => {
+            let id = drumKey[1].id;
+            return <Button letter={id} audioSource={drumKey[1].src} key={index}>{id}</Button>
+          })
+        /*
         <Button letter='Q' audioSource='http://john-pham.com/freecodecamp/BingBaa.mp3'></Button>
         <Button letter='W' audioSource='http://john-pham.com/freecodecamp/Celebration.mp3'></Button>
+        */}
       </div>
     );
   }
