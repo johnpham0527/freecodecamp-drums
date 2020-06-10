@@ -17,10 +17,12 @@ class Drums extends Component {
     this.state = {
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleDrumClick = this.handleDrumClick.bind(this);
   }
 
-  
+  handleDrumClick() {
+
+  }
 
   render() {
     return (
