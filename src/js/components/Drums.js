@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+const drums = {
+  '81': {
+    id: 'Q',
+    src: 'http://john-pham.com/freecodecamp/BingBaa.mp3'
+  },
+  '87': {
+    id: 'W',
+    src: 'http://john-pham.com/freecodecamp/Celebration.mp3'
+  }
+}
 
 const playAudio = letter => {
     let sound = document.getElementById(letter)
