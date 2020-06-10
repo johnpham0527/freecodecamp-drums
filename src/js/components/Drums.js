@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+const Button = ({capitalLetter, audioSource, handleDrumClick}) => { //destructuring props
+  return (
+    <button class='drum-pad'>
+      {capitalLetter}
+      <audio class='clip' id={capitalLetter} src={audioSource} onClick={handleDrumClick}></audio>
+    </button>
+  )
+}
+
 class Drums extends Component {
   constructor() {
     super();
