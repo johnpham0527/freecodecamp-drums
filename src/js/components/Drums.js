@@ -4,19 +4,19 @@ import ReactDOM from "react-dom";
 class Button extends Component {
   constructor(props) { //destructuring props
     super();
-    this.handleClick = this.handleClick.bind(this);
+    this.playAudio = this.playAudio.bind(this);
   }
 
-  handleClick() {
+  playAudio() {
     let sound = document.getElementById(this.props.letter)
     sound.play()
   }
 
   render() {
     return (
-      <button class='drum-pad'>
+      <button class='drum-pad' onClick={this.playAudio}>
         {this.props.letter}
-        <audio class='clip' id={this.props.letter} src={this.props.audioSource} onClick={this.handleClick}></audio>
+        <audio class='clip' id={this.props.letter} src={this.props.audioSource} ></audio>
       </button>
     )
   }
