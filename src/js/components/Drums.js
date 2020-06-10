@@ -13,8 +13,11 @@ const drums = {
 }
 
 const playAudio = letter => {
-    let sound = document.getElementById(letter)
-    sound.play()
+    let sound = document.getElementById(letter);
+    if (sound) { //play audio only if id was found
+      sound.play();
+    }
+    
 }
 
 class Button extends Component {
