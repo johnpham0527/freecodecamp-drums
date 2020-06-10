@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 class Button extends Component {
-  constructor(props) { //destructuring props
+  constructor(props) {
     super();
     this.playAudio = this.playAudio.bind(this);
   }
@@ -22,22 +22,16 @@ class Button extends Component {
   }
 }
 
-/*
-const Button = ({letter, audioSource, handleDrumClick}) => { //destructuring props
-  return (
-    <button class='drum-pad'>
-      {letter}
-      <audio class='clip' id={letter} src={audioSource} onClick={handleDrumClick}></audio>
-    </button>
-  )
-}
-*/
-
 class Drums extends Component {
   constructor() {
     super();
+
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
+  handleKeyPress(event) {
+    
+  }
 
   render() {
     return (
