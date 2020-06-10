@@ -14,9 +14,9 @@ class Button extends Component {
 
   render() {
     return (
-      <button class='drum-pad' onClick={this.playAudio}>
+      <button class='drum-pad' onClick={this.playAudio} type='button'>
         {this.props.letter}
-        <audio class='clip' id={this.props.letter} src={this.props.audioSource} ></audio>
+        <audio class='clip' id={this.props.letter} src={this.props.audioSource} type='audio/mpeg'></audio>
       </button>
     )
   }
