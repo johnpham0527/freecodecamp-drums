@@ -72,10 +72,7 @@ class DrumsApp extends React.Component {
         </section>
         {
           drums.map(
-            (drum, index) => 
-            {
-            return <Button id={drum.keycode} letter={drum.id} audioSource={drum.src} key={index} clickHandler={this.handleClick}>drum.id</Button>
-            }
+            (drum, index) => <Button id={drum.keycode} letter={drum.id} audioSource={drum.src} key={index} clickHandler={this.handleClick}>drum.id</Button>
           )
         }
       </div>
