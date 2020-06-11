@@ -56,18 +56,21 @@ class DrumsApp extends Component {
   }
 
   handleKeyPress(event) {
+    const { drums } = this.props;
     const keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
-    playAudio(this.props.drums[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
+    if (drums.hasOwnProperty(keyCodeString)) { //check to see if drums has keyCodeString as a property
+      playAudio(drums[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
+    }
   }
 
   render() {
+    const { drums } = this.props;
     return (
       <div>
         {
-          Object.entries(this.props.drums).map((drumKey, index) => {
-            let id = drumKey[1].id;
-            return <Button letter={id} audioSource={drumKey[1].src} key={index}>{id}</Button>
-          })
+          Object.keys(drums).map((drumKey, index) =>
+            <Button letter={drums[drumKey].id} audioSource={drums[drumKey].src} key={index}>{drums[drumKey].id}</Button>
+          )
         }
       </div>
     );
