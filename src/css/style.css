@@ -15,4 +15,5 @@ h1 {
 .drum-pad {
     font-size: 3em;
     flex: 1 1 33%;
+    height: 20vh;
 }
