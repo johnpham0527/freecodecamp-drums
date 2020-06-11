@@ -19,6 +19,15 @@ const sortedDrumsArray = (drums) => { //given an object containing a list of dru
   return orderedDrumsList;
 }
 
+const findDescription = (drumsArray, id) => {
+  for (let i = 0; i < drumsArray.length; i++) {
+    if (drumsArray[i].id === id) {
+      return drumsArray[i].description;
+    }
+  }
+  return "";
+}
+
 class DrumsApp extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +58,11 @@ class DrumsApp extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    playAudio(event.target.children[0].id);
+    let id = event.target.children[0].id
+    playAudio(id); //pass the audio element id to playAudio
+    this.setState({
+      display: findDescription(sortedDrumsArray(this.props.drums), id) //find the description, given the audio id
+    })
   }
 
   render() {
