@@ -41,7 +41,7 @@ class Button extends Component {
   }
 }
 
-class Drums extends Component {
+class DrumsApp extends Component {
   constructor(props) {
     super(props);
 
@@ -80,7 +80,7 @@ class Drums extends Component {
   }
 }
 
-export default Drums;
+export default DrumsApp;
 
 const wrapper = document.getElementById("root");
-wrapper ? ReactDOM.render(<Drums />, wrapper) : false;
+wrapper ? ReactDOM.render(<DrumsApp />, wrapper) : false;
