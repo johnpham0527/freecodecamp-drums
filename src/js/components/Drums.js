@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import playAudio from "./audio";
 import Button from "./button";
 
-const findDescription = (drumsArray, id) => {
-  for (let i = 0; i < drumsArray.length; i++) {
-    if (drumsArray[i].id === id) {
-      return drumsArray[i].description;
-    }
-  }
-  return "";
-}
-
 class DrumsApp extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +42,16 @@ class DrumsApp extends Component {
     return orderedDrumsList;
   }
 
+  findDescription = (id) => {
+      let drums = this.orderedDrumsList;
+      for (let i = 0; i < drums.length; i++) {
+        if (drums[i].id === id) {
+          return drums[i].description;
+        }
+      }
+      return "";
+    }
+
   handleKeyPress(event) {
     const { drums } = this.props;
     const keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
@@ -61,15 +62,15 @@ class DrumsApp extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    let id = event.target.children[0].id
+    let id = event.target.children[0].id;
     playAudio(id); //pass the audio element id to playAudio
     this.setState({
-      display: findDescription(this.orderedDrumsList, id) //find the description, given the audio id
+      display: this.findDescription(id) //find the description, given the audio id
     })
   }
 
   render() {
-    let drums = this.sortedDrumsArray(); //create drums array that sorts the drums by their order property
+    let drums = this.orderedDrumsList; //create drums array that sorts the drums by their order property
 
     return (
       <div id="drum-machine">
