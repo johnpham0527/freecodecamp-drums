@@ -77,4 +77,4 @@ class DrumsApp extends Component {
 export default DrumsApp;
 
 const wrapper = document.getElementById("root");
-wrapper ? ReactDOM.render(<DrumsApp />, wrapper) : false;
+wrapper ? ReactDOM.render(<DrumsApp drums={drumsList}/>, wrapper) : false;
