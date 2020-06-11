@@ -54,7 +54,7 @@ class DrumsApp extends Component {
           drums.map(
             (drum, index) => 
             {
-            return <Button letter={drum.id} audioSource={drum.src} key={index}>drum.id</Button>
+            return <Button id={drum.id + '-drum'} letter={drum.id} audioSource={drum.src} key={index}>drum.id</Button>
             }
           )
         }
