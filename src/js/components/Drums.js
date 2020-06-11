@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-const drums = {
+const drumsList = {
   '81': {
     id: 'Q',
     src: 'http://john-pham.com/freecodecamp/BingBaa.mp3'
@@ -58,7 +58,7 @@ class DrumsApp extends Component {
 
   handleKeyPress(event) {
     let keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
-    playAudio(drums[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
+    playAudio(drumsList[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
 
   }
 
@@ -67,7 +67,7 @@ class DrumsApp extends Component {
     return (
       <div>
         {
-          Object.entries(drums).map((drumKey, index) => {
+          Object.entries(drumsList).map((drumKey, index) => {
             let id = drumKey[1].id;
             return <Button letter={id} audioSource={drumKey[1].src} key={index}>{id}</Button>
           })
