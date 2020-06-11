@@ -58,7 +58,8 @@ class Drums extends Component {
 
   handleKeyPress(event) {
     let keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
-    playAudio(drums[keyCodeString]); //pass the key code in string form to the playAudio function
+    playAudio(drums[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
+
   }
 
   render() {
