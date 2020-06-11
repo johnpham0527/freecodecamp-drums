@@ -50,7 +50,6 @@ class DrumsApp extends Component {
         <section id="display">
           <p>Click a drum or press a key to play!</p>
         </section>
-        
         {
           drums.map(
             (drum, index) => 
@@ -58,11 +57,6 @@ class DrumsApp extends Component {
             return <Button letter={drum.id} audioSource={drum.src} key={index}>drum.id</Button>
             }
           )
-          /*
-          Object.keys(drums).map((drumKey, index) =>
-            <Button letter={drums[drumKey].id} audioSource={drums[drumKey].src} key={index}>{drums[drumKey].id}</Button>
-          )
-          */
         }
       </div>
     );
