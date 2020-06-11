@@ -30,7 +30,6 @@ class DrumsApp extends Component {
     return (
       <div id="drum-machine">
         <section id="display">
-          <h1>Drum Machine</h1>
           <p>Click a drum or press a key to play!</p>
         </section>
         

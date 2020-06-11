@@ -7,6 +7,11 @@ h1 {
     flex-wrap: wrap;
 }
 
+#display {
+    flex: 1 1 100%;
+    text-align: center;
+}
+
 .drum-pad {
     font-size: 3em;
     flex: 1 1 33%;
