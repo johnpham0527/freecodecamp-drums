@@ -43,8 +43,7 @@ class DrumsApp extends Component {
   }
 
   render() {
-    let drums = sortedDrumsArray(this.props.drums);
-    console.log(drums);
+    let drums = sortedDrumsArray(this.props.drums); //create drums array that sorts the drums by their order property
 
     return (
       <div id="drum-machine">
@@ -53,9 +52,17 @@ class DrumsApp extends Component {
         </section>
         
         {
+          drums.map(
+            (drum, index) => 
+            {
+            return <Button letter={drum.id} audioSource={drum.src} key={index}>drum.id</Button>
+            }
+          )
+          /*
           Object.keys(drums).map((drumKey, index) =>
             <Button letter={drums[drumKey].id} audioSource={drums[drumKey].src} key={index}>{drums[drumKey].id}</Button>
           )
+          */
         }
       </div>
     );
