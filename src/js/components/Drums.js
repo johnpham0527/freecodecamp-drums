@@ -23,6 +23,10 @@ class DrumsApp extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      display: "Click a drum or press a key to play!"
+    }
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -54,7 +58,7 @@ class DrumsApp extends Component {
     return (
       <div id="drum-machine">
         <section id="display">
-          <p>Click a drum or press a key to play!</p>
+          <p>{this.state.display}</p>
         </section>
         {
           drums.map(
