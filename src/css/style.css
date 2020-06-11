@@ -2,6 +2,12 @@ h1 {
     text-align: center;
 }
 
+#drum-machine {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .drum-pad {
     font-size: 48px;
+    flex: 1 1 33%;
 }

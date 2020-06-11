@@ -28,7 +28,7 @@ class DrumsApp extends Component {
   render() {
     const { drums } = this.props;
     return (
-      <div>
+      <div id="drum-machine">
         {
           Object.keys(drums).map((drumKey, index) =>
             <Button letter={drums[drumKey].id} audioSource={drums[drumKey].src} key={index}>{drums[drumKey].id}</Button>
