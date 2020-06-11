@@ -43,21 +43,8 @@ class DrumsApp extends Component {
   }
 
   render() {
-    const { drums } = this.props;
-    let sortMap = {};
-    let orderedDrumsList = [];
-
-    Object.keys(drums).forEach((drumKey) => {
-      let sortOrder = drums[drumKey].order;
-      sortMap[sortOrder] = drumKey;
-    });
-
-    Object.keys(sortMap).forEach((orderedKey) => {
-      let newKey = sortMap[orderedKey];
-      orderedDrumsList.push(drums[newKey]);
-    });
-
-    console.log(orderedDrumsList);
+    let drums = sortedDrumsArray(this.props.drums);
+    console.log(drums);
 
     return (
       <div id="drum-machine">
