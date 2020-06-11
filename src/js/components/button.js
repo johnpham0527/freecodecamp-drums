@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import playAudio from "./play-audio";
+import playAudio from "./audio";
 
 class Button extends Component {
     constructor({props}) {

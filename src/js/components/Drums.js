@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import playAudio from "./play-audio";
+import playAudio from "./audio";
 import Button from "./button";
 
 class DrumsApp extends Component {
