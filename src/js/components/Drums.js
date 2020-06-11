@@ -42,16 +42,6 @@ class DrumsApp extends React.Component {
     return orderedDrumsList;
   }
 
-  findDescription = (id) => {
-      let drums = this.orderedDrumsList;
-      for (let i = 0; i < drums.length; i++) {
-        if (drums[i].id === id) {
-          return drums[i].description;
-        }
-      }
-      return "";
-    }
-
   handleKeyPress(event) {
     const { drums } = this.props;
     const keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
