@@ -24,6 +24,7 @@ class DrumsApp extends Component {
     super(props);
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,11 @@ class DrumsApp extends Component {
     }
   }
 
+  handleClick(event) {
+    event.preventDefault();
+    playAudio(event.target.children[0].id);
+  }
+
   render() {
     let drums = sortedDrumsArray(this.props.drums); //create drums array that sorts the drums by their order property
 
@@ -54,7 +60,7 @@ class DrumsApp extends Component {
           drums.map(
             (drum, index) => 
             {
-            return <Button id={drum.id + '-drum'} letter={drum.id} audioSource={drum.src} key={index}>drum.id</Button>
+            return <Button id={drum.id + '-drum'} letter={drum.id} audioSource={drum.src} key={index} clickHandler={this.handleClick}>drum.id</Button>
             }
           )
         }
