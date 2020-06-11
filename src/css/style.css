@@ -14,6 +14,15 @@ h1 {
 
 .drum-pad {
     font-size: 3em;
-    flex: 1 1 33%;
+    flex: 1 1 30%;
     height: 20vh;
+    border-radius: 0.75em;
+    background-color: #693220;
+    color: white;
+    border: none;
+    text-align: center;
+    margin: 4px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
 }
