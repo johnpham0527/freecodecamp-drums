@@ -14,7 +14,7 @@ class Button extends Component {
     render() {
       const { letter, audioSource } = this.props; //destructure props
       return (
-        <button className='drum-pad' onClick={this.handleClick} type='button'>
+        <button className='drum-pad' onClick={this.handleClick} id={letter} type='button'>
           {letter}
           <audio className='clip' id={letter} src={audioSource} type='audio/mpeg'></audio>
         </button>
