@@ -17,7 +17,6 @@ const playAudio = letter => {
     if (sound) { //play audio only if id was found
       sound.play();
     }
-    
 }
 
 class Button extends Component {
@@ -59,11 +58,9 @@ class DrumsApp extends Component {
   handleKeyPress(event) {
     let keyCodeString = event.keyCode.toString(); //event.keyCode is the key code of the key that is pressed. It is an integer. Convert to string.
     playAudio(drumsList[keyCodeString].id); //using keyCodeString as the key, attempt to look up the id value in the drumsList array. Pass the id value to the playAudio function.
-
   }
 
   render() {
-
     return (
       <div>
         {
@@ -71,10 +68,7 @@ class DrumsApp extends Component {
             let id = drumKey[1].id;
             return <Button letter={id} audioSource={drumKey[1].src} key={index}>{id}</Button>
           })
-        /*
-        <Button letter='Q' audioSource='http://john-pham.com/freecodecamp/BingBaa.mp3'></Button>
-        <Button letter='W' audioSource='http://john-pham.com/freecodecamp/Celebration.mp3'></Button>
-        */}
+        }
       </div>
     );
   }
