@@ -2,23 +2,6 @@ import React, { Component } from "react";
 import playAudio from "./audio";
 import Button from "./button";
 
-const sortedDrumsArray = (drums) => { //given an object containing a list of drums, return an array of drums sorted by the order property
-  let sortMap = {};
-  let orderedDrumsList = [];
-
-  Object.keys(drums).forEach((drumKey) => {
-    let sortOrder = drums[drumKey].order;
-    sortMap[sortOrder] = drumKey;
-  });
-
-  Object.keys(sortMap).forEach((orderedKey) => {
-    let newKey = sortMap[orderedKey];
-    orderedDrumsList.push(drums[newKey]);
-  });
-
-  return orderedDrumsList;
-}
-
 const findDescription = (drumsArray, id) => {
   for (let i = 0; i < drumsArray.length; i++) {
     if (drumsArray[i].id === id) {
@@ -36,6 +19,8 @@ class DrumsApp extends Component {
       display: "Click a drum or press a key to play!"
     }
 
+    this.orderedDrumsList = this.sortedDrumsArray();
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -46,6 +31,24 @@ class DrumsApp extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('keydown');
+  }
+
+  sortedDrumsArray = () => { //given an object containing a list of drums, return an array of drums sorted by the order property
+    const { drums } = this.props;
+    let sortMap = {};
+    let orderedDrumsList = [];
+  
+    Object.keys(drums).forEach((drumKey) => {
+      let sortOrder = drums[drumKey].order;
+      sortMap[sortOrder] = drumKey;
+    });
+  
+    Object.keys(sortMap).forEach((orderedKey) => {
+      let newKey = sortMap[orderedKey];
+      orderedDrumsList.push(drums[newKey]);
+    });
+  
+    return orderedDrumsList;
   }
 
   handleKeyPress(event) {
@@ -61,12 +64,12 @@ class DrumsApp extends Component {
     let id = event.target.children[0].id
     playAudio(id); //pass the audio element id to playAudio
     this.setState({
-      display: findDescription(sortedDrumsArray(this.props.drums), id) //find the description, given the audio id
+      display: findDescription(this.orderedDrumsList, id) //find the description, given the audio id
     })
   }
 
   render() {
-    let drums = sortedDrumsArray(this.props.drums); //create drums array that sorts the drums by their order property
+    let drums = this.sortedDrumsArray(); //create drums array that sorts the drums by their order property
 
     return (
       <div id="drum-machine">
