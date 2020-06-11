@@ -66,10 +66,9 @@ class DrumsApp extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    let id = event.target.children[0].id;
-    playAudio(id); //pass the audio element id to playAudio
+    playAudio(event.target.children[0].id); //pass the audio element id to playAudio
     this.setState({
-      display: this.findDescription(id) //find the description, given the audio id
+      display: this.props.drums[event.target.id].description //find the description, given the id key stored in the button's id
     })
   }
 
