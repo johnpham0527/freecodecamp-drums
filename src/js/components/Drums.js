@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import playAudio from "./audio";
 import Button from "./button";
 
-class DrumsApp extends Component {
+class DrumsApp extends React.Component {
   constructor(props) {
     super(props);
 
