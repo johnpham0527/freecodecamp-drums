@@ -2,6 +2,23 @@ import React, { Component } from "react";
 import playAudio from "./audio";
 import Button from "./button";
 
+const sortedDrumsArray = (drums) => { //given an object containing a list of drums, return an array of drums sorted by the order property
+  let sortMap = {};
+  let orderedDrumsList = [];
+
+  Object.keys(drums).forEach((drumKey) => {
+    let sortOrder = drums[drumKey].order;
+    sortMap[sortOrder] = drumKey;
+  });
+
+  Object.keys(sortMap).forEach((orderedKey) => {
+    let newKey = sortMap[orderedKey];
+    orderedDrumsList.push(drums[newKey]);
+  });
+
+  return orderedDrumsList;
+}
+
 class DrumsApp extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +44,21 @@ class DrumsApp extends Component {
 
   render() {
     const { drums } = this.props;
+    let sortMap = {};
+    let orderedDrumsList = [];
+
+    Object.keys(drums).forEach((drumKey) => {
+      let sortOrder = drums[drumKey].order;
+      sortMap[sortOrder] = drumKey;
+    });
+
+    Object.keys(sortMap).forEach((orderedKey) => {
+      let newKey = sortMap[orderedKey];
+      orderedDrumsList.push(drums[newKey]);
+    });
+
+    console.log(orderedDrumsList);
+
     return (
       <div id="drum-machine">
         <section id="display">
